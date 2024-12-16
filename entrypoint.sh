@@ -77,7 +77,7 @@ echo "Done"
 
 
 echo "Uploading results to Datadog"
-${DATADOG_CLI_PATH} sbom upload --service osv-scanner --env ci "$OUTPUT_FILE" || exit 1
-echo "Done"
+${DATADOG_CLI_PATH} sbom upload --service osv-scanner --env ci "$OUTPUT_FILE"
 
+echo "Printing output file"
 cat $OUTPUT_FILE
