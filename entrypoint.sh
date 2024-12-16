@@ -32,7 +32,7 @@ chmod 755 /osv-scanner/osv-scanner
 # datadog-ci stuff
 ########################################################
 echo "Installing 'datadog-ci'"
-npm install -g @datadog/datadog-ci || exit 1
+npm install -g @datadog/datadog-ci@2.45.1 || exit 1
 
 DATADOG_CLI_PATH=/usr/bin/datadog-ci
 
@@ -78,6 +78,7 @@ echo "Done"
 
 echo "Uploading results to Datadog"
 ${DATADOG_CLI_PATH} sbom upload --service osv-scanner --env ci "$OUTPUT_FILE"
+echo "Done"
 
 echo "Printing output file"
 cat $OUTPUT_FILE
